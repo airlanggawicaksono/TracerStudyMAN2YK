@@ -1,0 +1,251 @@
+/* =========================================
+   STYLE.CSS - MODERN PREMIUM UI
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif; /* Font modern baru */
+}
+
+/* Scrollbar Modern */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* =========================================
+   1. HALAMAN LOGIN (CLEAN & SLEEK)
+   ========================================= */
+.login-body {
+    /* Latar belakang gradient super halus */
+    background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.kotak-login {
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06); 
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.kotak-login i {
+    color: #2563eb;
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 15px;
+    background: #eff6ff;
+    border-radius: 20px;
+}
+
+.kotak-login h2 {
+    color: #0f172a; 
+    font-weight: 800;
+    font-size: 28px;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.kotak-login p {
+    font-size: 15px;
+    color: #64748b; 
+    margin-bottom: 30px;
+}
+
+.input-group { margin-bottom: 20px; text-align: left; }
+
+.input-group input {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 14px;
+    border: 2px solid #e2e8f0;
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group input:focus {
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+}
+
+.btn-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* =========================================
+   2. TAMPILAN DASHBOARD, SIDEBAR & TABEL
+   ========================================= */
+.dashboard-body {
+    background-color: #f8fafc; /* Abu-abu super terang */
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Modern Navy */
+.sidebar {
+    width: 280px;
+    background: #0f172a; /* Deep Navy */
+    border-right: 1px solid #1e293b;
+    color: white;
+    position: fixed;
+    height: 100vh;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.sidebar-header {
+    border-bottom: 1px dashed #334155;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.sidebar-header h5 {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 2px;
+}
+
+.sidebar-header p {
+    font-size: 12px;
+    color: #94a3b8;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.sidebar .nav-link {
+    color: #94a3b8;
+    padding: 14px 20px;
+    border-radius: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav-link i { font-size: 1.1rem; }
+
+.sidebar .nav-link:hover {
+    background-color: #1e293b;
+    color: #f8fafc;
+    transform: translateX(5px); /* Animasi geser dikit ke kanan */
+}
+
+.sidebar .nav-link.active {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.25);
+}
+
+/* Area Konten Utama */
+.main-content {
+    margin-left: 280px;
+    padding: 40px 50px;
+    width: calc(100% - 280px);
+}
+
+/* Kartu Statistik Melayang */
+.stat-card {
+    padding: 30px;
+    border-radius: 24px;
+    color: white;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.bg-blue { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+.bg-green { background: linear-gradient(135deg, #10b981, #047857); }
+.bg-purple { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+
+/* Ubah desain Card putih standar (untuk Tabel & Form) */
+.card {
+    border: none !important;
+    border-radius: 24px !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03) !important;
+}
+
+/* Tabel Lebih Bersih */
+.table th {
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+.table td {
+    padding: 16px 12px;
+    color: #334155;
+    border-bottom: 1px solid #f8fafc;
+    vertical-align: middle;
+}
+
+/* Tombol Aksi Bulat */
+.btn-sm {
+    border-radius: 10px !important;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+/* =========================================
+   3. STRUKTUR ORGANISASI (PENGURUS)
+   ========================================= */
+.tree ul { padding-top: 30px; position: relative; display: flex; justify-content: center; }
+.tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 30px 10px 0 10px; }
+.tree li::before, .tree li::after{ content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 30px; }
+.tree li::after{ right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+.tree li:only-child::after, .tree li:only-child::before { display: none; }
+.tree li:only-child{ padding-top: 0;}
+.tree li:first-child::before, .tree li:last-child::after{ border: 0 none; }
+.tree li:last-child::before{ border-right: 2px solid #cbd5e1; border-radius: 0 8px 0 0; }
+.tree li:first-child::after{ border-radius: 8px 0 0 0; }
+.tree ul ul::before{ content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 30px; }
+.tree li a {
+    border: 1px solid #e2e8f0; padding: 20px 30px; text-decoration: none; display: inline-block;
+    border-radius: 16px; background: white; color: #0f172a;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.04); min-width: 160px;
+    transition: all 0.3s ease;
+}
+.tree li a:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); border-color: #3b82f6; }
+.tree-title { font-weight: 800; margin-bottom: 5px; font-size: 16px; color: #0f172a; }
+.tree-role { font-size: 13px; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
