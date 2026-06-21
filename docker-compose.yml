@@ -1,0 +1,44 @@
+services:
+  web:
+    build: .
+    container_name: tracer-web
+    ports:
+      # localhost only — nginx proxies to it. Uncommon port on purpose.
+      - "127.0.0.1:6473:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_USER: tracer_man2
+      DB_PASS: AlmTr4cer_MAN2_9kx
+      DB_NAME: db_alumni_tracer
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: mariadb:10.4
+    container_name: tracer-db
+    ports:
+      # localhost only — DBeaver/phpMyAdmin -> localhost:6474
+      - "127.0.0.1:6474:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Root_MAN2_Alm_7pQ
+      MYSQL_DATABASE: db_alumni_tracer
+      MYSQL_USER: tracer_man2
+      MYSQL_PASSWORD: AlmTr4cer_MAN2_9kx
+    volumes:
+      - dbdata:/var/lib/mysql
+      # Auto-imported on FIRST boot only (empty volume). `make reset` re-runs it.
+      - ./Database.sql:/docker-entrypoint-initdb.d/01-database.sql:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+volumes:
+  dbdata:
